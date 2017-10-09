@@ -1,16 +1,45 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
+import { HttpModule } from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
+
+import { HomePage } from '../pages/home/home';
+import { SignInPage } from '../pages/signInPage/signInPage';
+//import { JoinPage } from '../pages/joinPage/joinPage';
+import { PageHeader } from '../components/pageHeader/pageHeader';
+import { PageFooter } from '../components/pageFooter/pageFooter';
+//import { Countries } from '../components/countriesDropdown/countries';
+//import { Cards } from '../components/cards/cards';
+// import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+// import { InMemoryDataService }  from './in-memory-data.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SignInPage,
+    //JoinPage,
+    PageHeader,
+    //Countries,
+    //Cards,
+    PageFooter,
+    HomePage
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule,
+HttpClientModule,
+    //AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+    entryComponents: [
+    AppComponent,
+    PageHeader,
+    //Cards,
+    SignInPage,
+    PageFooter,
+    HomePage
+  ],
 })
 export class AppModule { }
