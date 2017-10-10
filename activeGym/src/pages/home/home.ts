@@ -16,6 +16,8 @@ firstname: string;
   styles: [
     `body {
       background-color: #FFFFFF;
+      background-image: url("../../assets/images/All_together.png");
+      background-color: #cccccc;
     }`,
 
     `.ui.menu .item img.logo {
