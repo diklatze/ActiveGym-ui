@@ -11,6 +11,11 @@ import { PageHeader } from '../components/pageHeader/pageHeader';
 import { PageFooter } from '../components/pageFooter/pageFooter';
 //import { Countries } from '../components/countriesDropdown/countries';
 import { Bulk } from '../components/bulk/bulk';
+import { Cake } from '../components/cake/cake';
+
+import { Status } from '../components/status/status';
+import { UsersTable } from '../components/usersTable/usersTable';
+
 // import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 // import { InMemoryDataService }  from './in-memory-data.service';
 
@@ -22,6 +27,10 @@ import { Bulk } from '../components/bulk/bulk';
     PageHeader,
     //Countries,
     Bulk,
+    Cake,
+    Status,
+    UsersTable,
+    
     PageFooter,
     HomePage
   ],

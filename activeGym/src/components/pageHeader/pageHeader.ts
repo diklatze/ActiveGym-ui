@@ -31,73 +31,73 @@ declare var $: any
       padding: 0em 0em;`,
   ]
 })
-export class PageHeader implements OnInit {
+export class PageHeader{
 
   //  @ViewChild('descriptionAccordion') descriptionAccordionElementRef: ElementRef;
-  @ViewChild('menuPopup1') menuPopup1ElementRef: ElementRef;
-  // @ViewChild('menuPopup2') menuPopup2ElementRef: ElementRef;
-  @ViewChild('menuPopup3') menuPopup3ElementRef: ElementRef;  
+  // @ViewChild('menuPopup1') menuPopup1ElementRef: ElementRef;
+  // // @ViewChild('menuPopup2') menuPopup2ElementRef: ElementRef;
+  // @ViewChild('menuPopup3') menuPopup3ElementRef: ElementRef;  
 
 
   constructor() { }
 
 
-  ngOnInit() {
-    //   $(this.descriptionAccordionElementRef.nativeElement)
-    //     .accordion();
+//   ngOnInit() {
+//     //   $(this.descriptionAccordionElementRef.nativeElement)
+//     //     .accordion();
 
 
 
-    $(this.menuPopup1ElementRef.nativeElement)
-      .popup({
-        inline: true,
-        hoverable: true,
-        position: 'bottom left',
-        delay: {
-          show: 300,
-          hide: 300
-        },
-        lastResort :'bottom left',
-        overflow:true,
-        setFluidWidth: false,
-        //onShow: () => { $('#popup1').css('max-width', $(window).width()); }
-      });
+//     $(this.menuPopup1ElementRef.nativeElement)
+//       .popup({
+//         inline: true,
+//         hoverable: true,
+//         position: 'bottom left',
+//         delay: {
+//           show: 300,
+//           hide: 300
+//         },
+//         lastResort :'bottom left',
+//         overflow:true,
+//         setFluidWidth: false,
+//         //onShow: () => { $('#popup1').css('max-width', $(window).width()); }
+//       });
 
 
-    // $(this.menuPopup2ElementRef.nativeElement)
-    //   .popup({
-    //     inline: true,
-    //     hoverable: true,
-    //     position: 'bottom left',
-    //     delay: {
-    //       show: 300,
-    //       hide: 300
-    //     },
-    //      lastResort :'bottom left',
-    //      setFluidWidth: false,
-    //     overflow:true,
-    //   });
+//     // $(this.menuPopup2ElementRef.nativeElement)
+//     //   .popup({
+//     //     inline: true,
+//     //     hoverable: true,
+//     //     position: 'bottom left',
+//     //     delay: {
+//     //       show: 300,
+//     //       hide: 300
+//     //     },
+//     //      lastResort :'bottom left',
+//     //      setFluidWidth: false,
+//     //     overflow:true,
+//     //   });
 
 
-      $(this.menuPopup3ElementRef.nativeElement)
-      .popup({
-        inline: true,
-        hoverable: true,
-        position: 'bottom left',
-        delay: {
-          show: 300,
-          hide: 300
-        },
-         lastResort :'bottom left',
-         setFluidWidth: false,
-        overflow:true,
-      });
-  }
+//       $(this.menuPopup3ElementRef.nativeElement)
+//       .popup({
+//         inline: true,
+//         hoverable: true,
+//         position: 'bottom left',
+//         delay: {
+//           show: 300,
+//           hide: 300
+//         },
+//          lastResort :'bottom left',
+//          setFluidWidth: false,
+//         overflow:true,
+//       });
+//   }
 
-//  goToSignIn(){
+// //  goToSignIn(){
      
-//      this.router.navigate(['signIn']);
+// //      this.router.navigate(['signIn']);
 
-//  }
+// //  }
 
 }
