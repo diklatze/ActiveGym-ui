@@ -17,17 +17,19 @@
             <h2>Upload date</h2>
           </td>
           <td>
-            <h2>
+            
               <div class="ui segment">
-                <h2><b>value</b></h2>
+                <h2><b>{{uploadDate}}</b></h2>
               </div>
-            </h2>
+            
           </td>
           <td>
             <h2>Execution date</h2>
           </td>
           <td>
-            <h2>value</h2>
+            <div class="ui segment">
+              <h2><b>{{executionDate}}</b></h2>
+            </div>
           </td>
         </tr>
         <tr>
@@ -35,13 +37,17 @@
             <h2>Number of transactions</h2>
           </td>
           <td>
-            <h2>value</h2>
+            <div class="ui segment">
+              <h2><b>{{numberOfTransactions}}</b></h2>
+            </div>
           </td>
           <td>
             <h2>Total amount</h2>
           </td>
           <td>
-            <h2>value</h2>
+            <div class="ui segment">
+              <h2><b>{{totalAmount}}</b></h2>
+            </div>
           </td>
         </tr>
         <tr>
@@ -55,8 +61,8 @@
             <h2></h2>
           </td>
           <td>
-            <h2><i class="check circle icon  big green"></i>
-              <button class="ui big button left "><h2>Submit requests</h2></button></h2>
+            <i class="check circle icon  big green"></i>
+              <button class="ui big button left" (click)="bulkSubmit()"><h2>Submit requests</h2></button>
           </td>
         </tr>
       </tbody>
