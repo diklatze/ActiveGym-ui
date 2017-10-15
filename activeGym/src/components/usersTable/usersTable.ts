@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Http,Response,Headers } from '@angular/http';
+import { Bulk } from '../bulk/bulk';
 
 
 @Component({
@@ -10,16 +11,17 @@ import { Http,Response,Headers } from '@angular/http';
   ]
 })
 export class UsersTable {
-
+status: string;
 
 
   constructor(private http: Http) {
-   
+
+
   }
 
-  getStatus(){
+  // getStatus(){
 
-    
-  }
+
+  // }
 
 }

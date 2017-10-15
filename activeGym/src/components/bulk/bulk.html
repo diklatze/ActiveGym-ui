@@ -14,14 +14,14 @@
       <tbody>
         <tr>
           <td>
-            <h2>Upload date</h2>
+            <h2>Upload date{{statusName}}</h2>
           </td>
           <td>
-            
+
               <div class="ui segment">
                 <h2><b>{{uploadDate}}</b></h2>
               </div>
-            
+
           </td>
           <td>
             <h2>Execution date</h2>
@@ -61,7 +61,7 @@
             <h2></h2>
           </td>
           <td>
-            
+
             <i  *ngIf="!submitResponse" class="check circle icon  big green"></i>
             <i  *ngIf="submitResponse" class="remove Circle icon  big grey"></i>
               <button class="ui big button left" (click)="bulkSubmit()"><h2>Submit requests</h2></button>
@@ -90,7 +90,7 @@
             <input type="text" placeholder="">
           </div>
         </div>
-      </div> --> 
+      </div> -->
 
       <!-- <div class="ui form">
         <div class="inline fields">
