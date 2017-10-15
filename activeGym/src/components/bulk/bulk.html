@@ -61,7 +61,9 @@
             <h2></h2>
           </td>
           <td>
-            <i class="check circle icon  big green"></i>
+            
+            <i  *ngIf="!submitResponse" class="check circle icon  big green"></i>
+            <i  *ngIf="submitResponse" class="remove Circle icon  big grey"></i>
               <button class="ui big button left" (click)="bulkSubmit()"><h2>Submit requests</h2></button>
           </td>
         </tr>
