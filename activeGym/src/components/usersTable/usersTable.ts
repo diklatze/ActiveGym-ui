@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Http,Response,Headers } from '@angular/http';
+
 
 @Component({
   selector: 'usersTable',
@@ -11,8 +13,13 @@ export class UsersTable {
 
 
 
-  constructor() {
+  constructor(private http: Http) {
    
+  }
+
+  getStatus(){
+
+    
   }
 
 }

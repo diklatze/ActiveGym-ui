@@ -4,6 +4,7 @@ import { OnInit } from '@angular/core';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/map';
 import { Http,Response,Headers } from '@angular/http';
+import { UsersTable } from '../usersTable/usersTable';
 
 
 
@@ -49,6 +50,7 @@ export class Bulk implements OnInit{
       
     );
 
+    UsersTable.getStatus();
     
   }
 
