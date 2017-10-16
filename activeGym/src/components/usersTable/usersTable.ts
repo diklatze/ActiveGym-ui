@@ -29,12 +29,13 @@ export class UsersTable {
   @Input() numberOfTransactions: string;
   @Input() totalAmount: string;
 
-  today: number = Date.now();
+  today: number;
   categoriesStatus: catagory[];
   constructor(private http: Http, public helpService: HelpService) { }
   check: number = 1;
 
   refresh() {
+    this.today= Date.now();
     this.check = 0;
     this.http.get('http://service-request-for-payments.azurewebsites.net/bulk/' + this.bulkId + '/status')
     .map(res => {
