@@ -2,9 +2,9 @@
   <div class="ui raised segments" style="width:90%; margin: 50px 800px 20px 100px;">
     <div class="ui segment">
 
-      <h2>Data as of</h2>
-      <button *ngIf = "!check" class="ui massive right floated loading button"></button>
-      <button *ngIf = "check"class="ui massive right floated compact icon button" (click)="refresh()">
+      <h2>Data as of: {{ today| date:'medium' }}</h2>
+      <button *ngIf="!check" class="ui massive right floated loading button"></button>
+      <button *ngIf="check" class="ui massive right floated compact icon button" (click)="refresh()">
              <i class="refresh icon"></i>
           </button>
       <br><br><br>

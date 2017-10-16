@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import { HelpService } from '../../services/help.services';
 import { OnInit } from '@angular/core';
+import { DatePipe } from '@angular/common';
 
 class catagory {
   name: string;
@@ -28,6 +29,7 @@ export class UsersTable {
   @Input() numberOfTransactions: string;
   @Input() totalAmount: string;
 
+  today: number = Date.now();
   categoriesStatus: catagory[];
   constructor(private http: Http, public helpService: HelpService) { }
   check: number = 1;
@@ -38,7 +40,8 @@ export class UsersTable {
     .map(res => {
       // If request fails, throw an Error that will be caught
       if(res.status < 200 || res.status >= 300) {
-        this.check = 1;
+        throw new Error('This request has failed ' + res.status);
+
       } 
       // If everything went fine, return the response
       else {
