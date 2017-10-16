@@ -11,9 +11,9 @@ export class Status {
 
   @Input() numberOfTransactions:string;
   @Input() totalAmount:string;
-  @Input() name: string;
-  @Input() numOfTxs: number;
-  @Input() totalAmountOfOne: number;
+  @Input('catagory.name') name: string;
+  @Input('catagory.numOfTxs') numOfTxs: number = 0;
+  @Input('catagory.totalAmount') totalAmountOfOne: number = 0;
 
 
 

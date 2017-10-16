@@ -2,9 +2,8 @@
   <div class="ui raised segments" style="width:90%; margin: 50px 800px 20px 100px;">
     <div class="ui segment">
 
-        <h2>Data as of</h2>
-        <button class="ui massive right floated compact icon button" 
-        (click)="getID()">
+      <h2>Data as of</h2>
+      <button class="ui massive right floated compact icon button" (click)="refresh()">
             <i class="refresh icon"></i>
           </button>
       <br><br><br>
@@ -20,40 +19,18 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>
-              <h2><br>Paid{{id}}</h2>
-              <status></status>
-            </td>
-            <td>
-              <cake></cake>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <h2>Paid</h2>
-              <status></status>
-            </td>
-            <td>
-              <cake></cake>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <h2>Paid</h2>
-              <status></status>
-            </td>
-            <td>
-              <cake></cake>
-            </td>
-          </tr>
+            <div *ngFor="let catagory of categoriesStatus">
+                <status [catagory.name]="catagory.name" [catagory.numOfTxs]="catagory.numOfTxs" [catagory.totalAmount]="catagory.totalAmount" 
+                [numberOfTransactions]="numberOfTransactions" [totalAmount]="totalAmount" ></status>
+            </div>
+            
         </tbody>
         <tfoot>
           <tr>
             <th></th>
             <th></th>
           </tr>
-        </tfoot>
+          </tfoot>
       </table>
 
       <p></p>

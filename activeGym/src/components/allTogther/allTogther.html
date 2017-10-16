@@ -1,2 +1,10 @@
-<bulk [bulkId]="bulkId" [uploadDate]="uploadDate" [executionDate]="executionDate" [numberOfTransactions]="numberOfTransactions" [totalAmount]="totalAmount"></bulk>
-<usersTable [bulkId]="bulkId"></usersTable>
+<bulk 
+    [bulkId]="bulkId" 
+    [uploadDate]="uploadDate" 
+    [executionDate]="executionDate" 
+    [numberOfTransactions]="numberOfTransactions" 
+    [totalAmount]="totalAmount"></bulk>
+<usersTable [bulkId]="bulkId" 
+            [numberOfTransactions]="numberOfTransactions" 
+            [totalAmount]="totalAmount">
+</usersTable>
