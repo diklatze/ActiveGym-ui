@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 
 @Component({
   selector: 'status',
@@ -8,6 +8,12 @@ import { Component } from '@angular/core';
   ]
 })
 export class Status {
+
+  @Input() numberOfTransactions:string;
+  @Input() totalAmount:string;
+  @Input() name: string;
+  @Input() numOfTxs: number;
+  @Input() totalAmountOfOne: number;
 
 
 

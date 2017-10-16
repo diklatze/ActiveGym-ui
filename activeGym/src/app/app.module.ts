@@ -12,6 +12,7 @@ import { PageFooter } from '../components/pageFooter/pageFooter';
 //import { Countries } from '../components/countriesDropdown/countries';
 import { Bulk } from '../components/bulk/bulk';
 import { Cake } from '../components/cake/cake';
+import { AllTogther } from '../components/allTogther/allTogther';
 
 import { Status } from '../components/status/status';
 import { UsersTable } from '../components/usersTable/usersTable';
@@ -30,7 +31,7 @@ import { UsersTable } from '../components/usersTable/usersTable';
     Cake,
     Status,
     UsersTable,
-    
+    AllTogther,
     PageFooter,
     HomePage
   ],
@@ -48,7 +49,7 @@ HttpClientModule,
     //Cards,
     SignInPage,
     PageFooter,
-    HomePage
+    //HomePage
   ],
 })
 export class AppModule { }

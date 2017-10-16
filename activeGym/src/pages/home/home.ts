@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
-
-
 import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { OnInit } from '@angular/core';
+// import 
 
-class ItemsResponse {
-lastname: string;
-firstname: string;
-}
+
 
 @Component({
   selector: 'page-home',
@@ -55,55 +52,37 @@ firstname: string;
       }`,
   ]
 })
-export class HomePage {
-  results: ItemsResponse;
+export class HomePage {//implements OnInit {
+
+  //submitResponse:number=0;
+//   bulkId: string;
+//   //testId:string;
+//   uploadDate: string;
+//   executionDate: string;
+//   numberOfTransactions: string;
+//   totalAmount: string;
+//   options = {
+//     year: "numeric", month: "short",
+//     day: "numeric"
+//   };
+// lala:string;
+  constructor(private http: Http) { }
+
+  // ngOnInit(): void {
+  //   this.lala = "lalalala"
 
 
-  // constructor(public http: Http) { }
-    constructor(private http: HttpClient) {}
+  //   this.http.get('https://service-payments.azurewebsites.net/bulks/search/is-new-requests?companyId=USACUGYMACTIVE&status=Uploaded')
+  //     .map(res => { return res.json() })
+  //     .subscribe(
+  //     data => {
+  //       this.uploadDate = new Date(data._embedded.bulks[0].uploadDate).toLocaleDateString('en-US', this.options);
+  //       this.bulkId = data._embedded.bulks[0].id;
+  //       this.executionDate = data._embedded.bulks[0].executionDate;
+  //       this.numberOfTransactions = data._embedded.bulks[0].numberOfTransactions.toString();
+  //       this.totalAmount = data._embedded.bulks[0].totalAmount.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+  //     },
 
-
-
-
-
-//   getDikla() {
-
-// // this.http.get('http://34.251.173.40:8000/example/')
-// //        .subscribe(data => { this.results = data; },
-// //        err => { console.log("Oops!"); });
-//   //    this.http.get('http://34.251.173.40:8000/api/')
-//   //      .map((res: Response) => { return res.json():P })
-//   //      .subscribe(data => { this.diklaString = data['_body']; }
-//   //      , err => { console.log('Oops!'); });
-//   //  }
-// // this.http.get('http://34.251.173.40:8000/example/')
-// //        .map(res => res.json())
-// //        .subscribe(data => { this.diklaString = data; },
-// //        err => { console.log('Oops!'); });
-
-//   // goToSignUp(){
-//   //   this.nav.push(SignUpPage)
-
-//   //}
-
-//   // this.http.get('http://34.251.173.40:8000/example/').subscribe(data => {
-//   //     // Read the result field from the JSON response.
-//   //     this.results = data['results'];
-//   //   });
-
-//     this.http.get<ItemsResponse>('http://34.251.173.40:8000/example/').subscribe(data => {
-//   // data is now an instance of type ItemsResponse, so you can do this:
-//   this.results = data;
-// });
-
-// // this.http
-// //   .get<ItemsResponse>('http://34.251.173.40:8000/example/', {observe: 'response'})
-// //   .subscribe(resp => {
-// //     // Here, resp is of type HttpResponse<MyJsonData>.
-// //     // You can inspect its headers:
-// //     console.log(resp.headers.get('X-Custom-Header'));
-// //     // And access the body directly, which is typed as MyJsonData as requested.
-// //     console.log(resp.body.results);
-// //   });
-//   }
+  //   );
+  // }
 }
