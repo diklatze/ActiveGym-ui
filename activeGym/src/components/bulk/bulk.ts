@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/map';
 import { Http,Response,Headers } from '@angular/http';
 import { UsersTable } from '../usersTable/usersTable';
+import {HelpService} from '../../services/help.services';
 
 
 
@@ -13,25 +14,26 @@ import { UsersTable } from '../usersTable/usersTable';
   templateUrl: 'bulk.html',
   styles: [
     ``,
-  ]
+  ],
+  providers: [HelpService]
 })
 export class Bulk implements OnInit{
-  submitResponse: number = 0;
-  statusName: string;
-  bulkId: string;
-  uploadDate: string;
-  executionDate: string;
-  numberOfTransactions: string;
-  totalAmount: string;
+  submitResponse:number=0;
+  bulkId:string;
+  testId:string;
+  uploadDate:string;
+  executionDate:string;
+  numberOfTransactions:string;
+  totalAmount:string;
   options = {
     year: "numeric", month: "short",
     day: "numeric"
 };
 
-  constructor(private http: Http) {}
-
+  constructor(private http: Http, private helpService:HelpService) {}
+  
   bulkSubmit(){
-    this.submitResponse = 1;
+    this.submitResponse=1;
     let headers = new Headers;
     // headers.append('Content-Type', 'application/json');
     let body = {};
@@ -40,48 +42,46 @@ export class Bulk implements OnInit{
       // If request fails, throw an Error that will be caught
       if(res.status < 200 || res.status >= 300) {
         throw new Error('This request has failed ' + res.status);
-      }
+      } 
       // If everything went fine, return the response
       else {
-
+        
         return res.json();
       }
     })
     .subscribe(
-
+      
     );
 
-
-
-    //this.http.get('http://service-request-for-payments.azurewebsites.net/bulk/' + this.bulkId + '/status')
     this.http.get('https://service-payments.azurewebsites.net/bulks/search/is-new-requests?companyId=USACUGYMACTIVE&status=Processed')
-
     .map(res =>{ return res.json()})
     .subscribe(
-      data => {
-                this.statusName = data._embedded.bulks[0].id;
-
-
-      });
+      data => { 
+        this.helpService.helpServiceId = data._embedded.bulks[0].id;
+                
+                },
+     
+      );
+    
   }
 
   ngOnInit(): void {
-
-
+    
+    
     this.http.get('https://service-payments.azurewebsites.net/bulks/search/is-new-requests?companyId=USACUGYMACTIVE&status=Uploaded')
-    .map(res =>{return res.json()})
+    .map(res =>{ return res.json()})
     .subscribe(
-      data => { this.uploadDate = new Date(data._embedded.bulks[0].uploadDate).toLocaleDateString('en-US', this.options);
+      data => { this.uploadDate = new Date(data._embedded.bulks[0].uploadDate).toLocaleDateString('en-US', this.options); 
                 this.bulkId = data._embedded.bulks[0].id;
                 this.executionDate = data._embedded.bulks[0].executionDate;
                 this.numberOfTransactions = data._embedded.bulks[0].numberOfTransactions.toString();
                 this.totalAmount = data._embedded.bulks[0].totalAmount.toLocaleString('en-US', {  style: 'currency',  currency: 'USD'});},
-
+     
       );
   }
-
-
-
+   
+  
+  
 }
 
 
