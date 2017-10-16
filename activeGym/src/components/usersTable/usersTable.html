@@ -3,8 +3,9 @@
     <div class="ui segment">
 
       <h2>Data as of</h2>
-      <button class="ui massive right floated compact icon button" (click)="refresh()">
-            <i class="refresh icon"></i>
+      <button *ngIf = "!check" class="ui massive right floated loading button"></button>
+      <button *ngIf = "check"class="ui massive right floated compact icon button" (click)="refresh()">
+             <i class="refresh icon"></i>
           </button>
       <br><br><br>
       <table class="ui large ver padded fixed violet table">
@@ -19,18 +20,18 @@
           </tr>
         </thead>
         <tbody>
-            <div *ngFor="let catagory of categoriesStatus">
-                <status [catagory.name]="catagory.name" [catagory.numOfTxs]="catagory.numOfTxs" [catagory.totalAmount]="catagory.totalAmount" 
-                [numberOfTransactions]="numberOfTransactions" [totalAmount]="totalAmount" ></status>
-            </div>
-            
+          <div *ngFor="let catagory of categoriesStatus">
+            <status [catagory.name]="catagory.name" [catagory.numOfTxs]="catagory.numOfTxs" [catagory.totalAmount]="catagory.totalAmount"
+              [numberOfTransactions]="numberOfTransactions" [totalAmount]="totalAmount"></status>
+          </div>
+
         </tbody>
         <tfoot>
           <tr>
             <th></th>
             <th></th>
           </tr>
-          </tfoot>
+        </tfoot>
       </table>
 
       <p></p>
