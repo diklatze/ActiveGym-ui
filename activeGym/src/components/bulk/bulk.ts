@@ -30,7 +30,7 @@ export class Bulk implements OnInit{
     day: "numeric"
 };
 
-  constructor(private http: Http, private helpService:HelpService) {}
+  constructor(private http: Http, public helpService:HelpService) {}
   
   bulkSubmit(){
     this.submitResponse=1;
@@ -57,7 +57,7 @@ export class Bulk implements OnInit{
     .map(res =>{ return res.json()})
     .subscribe(
       data => { 
-        this.helpService.helpServiceId = data._embedded.bulks[0].id;
+        this.helpService.sethelpServiceId(data._embedded.bulks[0].id);
                 
                 },
      

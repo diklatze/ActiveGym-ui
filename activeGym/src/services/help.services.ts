@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
+
 @Injectable()
 
 class catagory {
@@ -21,8 +22,13 @@ export class HelpService {
     helpServiceId : string;
     constructor() { }
 
-    
+    gethelpServiceId(){
+        return this.helpServiceId;
+    }
 
+    sethelpServiceId(newName:string){
+        this.helpServiceId=newName;
+    }
 
 }
 

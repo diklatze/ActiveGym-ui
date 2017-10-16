@@ -3,7 +3,8 @@
     <div class="ui segment">
 
         <h2>Data as of</h2>
-        <button class="ui massive right floated compact icon button">
+        <button class="ui massive right floated compact icon button" 
+        (click)="getID()">
             <i class="refresh icon"></i>
           </button>
       <br><br><br>
@@ -14,14 +15,14 @@
               <h1>Request status</h1>
             </th>
             <th class="three wide">
-              <h1>Membership{{lala}}</h1>
+              <h1>Membership</h1>
             </th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>
-              <h2><br>Paid</h2>
+              <h2><br>Paid{{id}}</h2>
               <status></status>
             </td>
             <td>
