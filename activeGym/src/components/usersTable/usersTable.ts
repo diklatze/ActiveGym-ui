@@ -63,7 +63,6 @@ export class UsersTable {
 
     );
    
-   // this.categoriesStatus.forEach(element => {element.totalAmountString=element.totalAmount.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
       
     });
 
