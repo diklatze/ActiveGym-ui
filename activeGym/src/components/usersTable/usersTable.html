@@ -21,7 +21,7 @@
         </thead>
         <tbody>
           <div *ngFor="let catagory of categoriesStatus">
-            <status [catagory.name]="catagory.name" [catagory.numOfTxs]="catagory.numOfTxs" [catagory.totalAmount]="catagory.totalAmount"
+            <status [catagory.name]="catagory.name" [catagory.numOfTxs]="catagory.numOfTxs" [catagory.totalAmountString]="catagory.totalAmountString"
               [numberOfTransactions]="numberOfTransactions" [totalAmount]="totalAmount"></status>
           </div>
 

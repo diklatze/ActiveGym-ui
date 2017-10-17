@@ -8,6 +8,7 @@ class catagory {
   name: string;
   numOfTxs: number;
   totalAmount: number;
+  totalAmountString?:string;
   split: {
     GOLD: number;
     PLATINUM: number;
@@ -33,6 +34,7 @@ export class UsersTable {
   categoriesStatus: catagory[];
   constructor(private http: Http, public helpService: HelpService) { }
   check: number = 1;
+  
 
   refresh() {
     this.today= Date.now();
@@ -53,11 +55,18 @@ export class UsersTable {
       .subscribe(
       data => {
         this.categoriesStatus = data.categoriesStatus;
+        this.categoriesStatus.forEach(element => {element.totalAmountString=element.totalAmount.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
+        
         this.check = 1;
 
       },
 
     );
    
+   // this.categoriesStatus.forEach(element => {element.totalAmountString=element.totalAmount.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
+      
+    });
+
+
   }
 }
